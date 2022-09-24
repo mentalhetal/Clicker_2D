@@ -47,13 +47,13 @@ public class UpgradeButton : MonoBehaviour
 
     public void UpdateUpgrade()
     {
-        goldByUpgrade = goldByUpgrade + startGoldByUpgrade * (int)Mathf.Pow(upgradePow, level);
+        goldByUpgrade = startGoldByUpgrade * (int)Mathf.Pow(upgradePow, level);
         currentCost = startCurrentCost * (int)Mathf.Pow(costPow, level);
     }
 
     public void UpdateUI()
     {
-        upgradeDisplayer.text = upgradeName + "\nCost: " + currentCost + "\nLevel: " + level +
+        upgradeDisplayer.text = upgradeName + "\nLevel: " + level + "\nCost: " + currentCost +
                                 "\nNext GoldPerClick: " + goldByUpgrade;
     }
 }

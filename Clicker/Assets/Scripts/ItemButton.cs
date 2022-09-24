@@ -18,16 +18,15 @@ public class ItemButton : MonoBehaviour
     public int goldPerSec;
     public int startGoldPerSec = 1;
 
-    public float costPow = 3.14f;
     public float upgradePow = 1.07f;
+    public float costPow = 3.14f;
 
     [HideInInspector]
     public bool isPurchased = false;
 
     private void Start()
     {
-        currentCost = startCurrentCost;
-        goldPerSec = startGoldPerSec;
+        DataController.GetInstance().LoadItemButton(this);
 
         StartCoroutine("AddGoldLoop");
 
@@ -44,6 +43,8 @@ public class ItemButton : MonoBehaviour
 
             UpdateItem();
             UpdateUI();
+
+            DataController.GetInstance().SaveItemButton(this);
         }
     }
 
