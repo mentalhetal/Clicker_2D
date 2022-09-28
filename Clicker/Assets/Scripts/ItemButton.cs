@@ -69,7 +69,7 @@ public class ItemButton : MonoBehaviour
 
     public void UpdateUI()
     {
-        itemDisplayer.text = itemName + "\nLevel: " + level + "\nCost: " +
-                             currentCost + "\nGold Per Sec: " + goldPerSec + "\nIsPurchased: " + isPurchased;
+        itemDisplayer.text = itemName + "\n레벨: " + level + "\n비용: " +
+                             currentCost + "\n초당 골드량 추가: " + goldPerSec; //+ "\nIsPurchased: " + isPurchased;
     }
 }
